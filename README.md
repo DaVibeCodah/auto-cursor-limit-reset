@@ -1,3 +1,36 @@
+> **🚀 This is an automated fork**  
+> Based on the original [cursor-limit-reset](https://github.com/yx-elite/cursor-limit-reset), this version adds:
+> - **Background daemon** with system tray icon (green = active, red = paused)
+> - **Automatic periodic reset** (every 30 minutes, configurable)
+> - **One‑click toggle** – enable/disable auto‑reset from the tray
+> - **Startup integration** – runs silently on login (Windows/macOS/Linux)
+> - **`--revert` flag** – restore all settings from latest backup **except** the telemetry IDs (keeps fresh IDs)
+>
+> No terminal needed – just run once and it lives in your tray.  
+> 👉 **See the “Automated Usage” section below for the new commands.**
+
+
+## 🤖 Automated Usage (Fork Features)
+
+1. **Run the daemon** (adds itself to startup):
+   
+       python cursor_reset.py
+   
+   A tray icon appears – green = auto‑reset on, red = off.
+
+2. **Right‑click the tray icon** to:
+   - Toggle auto‑reset on/off
+   - Reset IDs immediately
+   - Exit the daemon
+
+3. **Revert settings except IDs** (close Cursor first):
+   
+       python cursor_reset.py --revert
+   
+   Restores every setting from the latest backup, but keeps your current fresh IDs.
+
+All backups are timestamped and stored next to `storage.json`.
+
 # Cursor Trial Reset Tool
 
 A utility tool designed to manage the Cursor editor's device identification system by resetting stored device IDs. This can assist users in resolving issues related to account restrictions when switching between accounts or during trial periods.
